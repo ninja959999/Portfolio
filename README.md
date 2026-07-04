@@ -14,20 +14,6 @@ Le site repose sur des technologies web fondamentales, optimisées pour la perfo
 * **JavaScript (Vanilla) :** Gestion de l'interactivité (scroll fluide, observer d'animations).
 * **FontAwesome :** Pour une intégration iconographique moderne.
 
-## 🚀 Mise en ligne (GitHub Pages)
-C'est la partie la plus importante : **ton portfolio doit être visible en ligne !**
-GitHub te permet d'héberger ce site gratuitement :
-
-1.  Va dans les **Settings** de ton dépôt GitHub.
-2.  Dans le menu de gauche, clique sur **Pages**.
-3.  Sous "Build and deployment", dans "Branch", sélectionne `main` (ou `master`) et clique sur **/ (root)**.
-4.  Clique sur **Save**.
-5.  Après une minute, un lien apparaîtra en haut de la page : c'est l'adresse de ton site web (ex: `https://ton-pseudo.github.io/Ton-Depot/`).
-
-## 📁 Structure du projet
-* `index.html` : Structure principale du site.
-* `README.md` : Documentation du projet.
-* `assets/` : (Si tu ajoutes des images/logos plus tard).
 
 ## 🔗 Connectons-nous
 Ce portfolio est fait pour échanger. Tu peux me retrouver sur :
