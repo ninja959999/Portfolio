@@ -28,9 +28,7 @@
             overflow-x: hidden;
         }
 
-        /* ================================
-           NAVBAR
-           ================================ */
+        /* NAVBAR */
         nav {
             position: fixed;
             top: 0;
@@ -45,467 +43,50 @@
             border-bottom: 1px solid rgba(255, 71, 87, 0.2);
         }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, #ff4757, #00d2d3);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+        .logo { font-size: 1.8rem; font-weight: bold; background: linear-gradient(135deg, #ff4757, #00d2d3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: flex; align-items: center; gap: 0.5rem; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: #e0e0e0; text-decoration: none; transition: color 0.3s; font-weight: 500; }
+        .nav-links a:hover { color: #ff4757; }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
+        /* HERO */
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem; margin-top: 60px; background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%); position: relative; }
+        .hero-content { position: relative; z-index: 2; max-width: 800px; }
+        .hero h1 { font-size: 4rem; margin-bottom: 1rem; background: linear-gradient(135deg, #ff4757, #ffa502); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn { padding: 12px 30px; border: none; border-radius: 50px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .btn-primary { background: linear-gradient(135deg, #ff4757, #ffa502); color: white; }
+        .btn-secondary { background: transparent; border: 2px solid #ff4757; color: #ff4757; }
 
-        .nav-links a {
-            color: #e0e0e0;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-weight: 500;
-        }
+        /* SECTIONS GÉNÉRALES */
+        .projects, .links, .stats, .about { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .section-title { font-size: 2.5rem; margin-bottom: 3rem; text-align: center; background: linear-gradient(135deg, #ff4757, #00d2d3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        .nav-links a:hover {
-            color: #ff4757;
-        }
+        /* NOUVEAUX PANNEAUX (Logiciel & Langues) */
+        .about-section { margin: 40px auto; max-width: 1200px; padding: 0 2rem; }
+        .about-section h2 { color: #fff; font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid #2ec4b6; display: inline-block; padding-bottom: 5px; }
+        .skills-category { margin-bottom: 30px; }
+        .skills-category h3 { color: #a0a0a0; font-size: 18px; display: flex; align-items: center; margin-bottom: 15px; }
+        .skills-category h3 img { width: 24px; height: 24px; margin-right: 10px; }
+        .skill-item { margin-bottom: 10px; }
+        .skill-name { color: #fff; display: block; margin-bottom: 5px; font-size: 14px; }
+        .skill-bar-container { height: 6px; width: 100%; background-color: #333; border-radius: 3px; overflow: hidden; }
+        .skill-bar { height: 100%; background-color: #2ec4b6; border-radius: 3px; }
+        .languages-section .skill-item { margin-bottom: 8px; }
 
-        /* ================================
-           HERO SECTION
-           ================================ */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 60px;
-            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(255, 71, 87, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: pulse 8s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); }
-            50% { transform: translate(-50%, -50%) scale(1.1); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ff4757, #ffa502);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: slideDown 0.8s ease;
-        }
-
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            color: #a0a0a0;
-            margin-bottom: 2rem;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 12px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #ff4757, #ffa502);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 71, 87, 0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border: 2px solid #ff4757;
-            color: #ff4757;
-        }
-
-        .btn-secondary:hover {
-            background: #ff4757;
-            color: white;
-        }
-
-        /* ================================
-           PROJECTS SECTION
-           ================================ */
-        .projects {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            background: linear-gradient(135deg, #ff4757, #00d2d3);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: rgba(255, 71, 87, 0.05);
-            border: 1px solid rgba(255, 71, 87, 0.2);
-            border-radius: 15px;
-            padding: 2rem;
-            transition: all 0.3s;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #ff4757, #00d2d3);
-            transform: scaleX(0);
-            transition: transform 0.3s;
-        }
-
-        .project-card:hover {
-            border-color: #ff4757;
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(255, 71, 87, 0.2);
-        }
-
-        .project-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .project-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #ff4757;
-        }
-
-        .project-title {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #ffffff;
-        }
-
-        .project-desc {
-            color: #a0a0a0;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .project-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .badge {
-            background: rgba(0, 210, 211, 0.2);
-            border: 1px solid #00d2d3;
-            color: #00d2d3;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-        }
-
-        /* ================================
-           LINKS SECTION
-           ================================ */
-        .links {
-            padding: 5rem 2rem;
-            background: rgba(255, 71, 87, 0.05);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .link-box {
-            background: rgba(26, 26, 26, 0.8);
-            border: 1px solid rgba(255, 71, 87, 0.3);
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .link-box:hover {
-            border-color: #ff4757;
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(255, 71, 87, 0.2);
-        }
-
-        .link-icon {
-            font-size: 2.5rem;
-            color: #ff4757;
-            margin-bottom: 1rem;
-        }
-
-        .link-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: #ffffff;
-            font-weight: 600;
-        }
-
-        .link-subtitle {
-            color: #a0a0a0;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .link-btn {
-            display: inline-block;
-            padding: 8px 20px;
-            background: linear-gradient(135deg, #ff4757, #ffa502);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .link-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 71, 87, 0.3);
-        }
-
-        /* ================================
-           STATS SECTION
-           ================================ */
-        .stats {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .stat-item h3 {
-            font-size: 2.5rem;
-            color: #ff4757;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-item p {
-            color: #a0a0a0;
-        }
-
-        /* ================================
-           ABOUT SECTION
-           ================================ */
-        .about {
-            padding: 5rem 2rem;
-            background: rgba(255, 71, 87, 0.05);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: #ffffff;
-        }
-
-        .about-text p {
-            color: #a0a0a0;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .skill {
-            background: rgba(0, 210, 211, 0.2);
-            border: 1px solid #00d2d3;
-            color: #00d2d3;
-            padding: 8px 16px;
-            border-radius: 25px;
-            font-weight: 600;
-        }
-
-        .about-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .avatar-box {
-            width: 300px;
-            height: 300px;
-            background: linear-gradient(135deg, #ff4757, #00d2d3);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-        }
-
-        /* ================================
-           FOOTER
-           ================================ */
-        footer {
-            background: rgba(15, 15, 15, 0.95);
-            border-top: 1px solid rgba(255, 71, 87, 0.2);
-            padding: 2rem;
-            text-align: center;
-            color: #a0a0a0;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .social-links a {
-            color: #ff4757;
-            font-size: 1.5rem;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-
-        .social-links a:hover {
-            color: #00d2d3;
-            transform: translateY(-3px);
-        }
-
-        /* ================================
-           RESPONSIVE
-           ================================ */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.9rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .avatar-box {
-                width: 200px;
-                height: 200px;
-                font-size: 3rem;
-            }
-        }
-
-        /* ================================
-           ANIMATIONS
-           ================================ */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            animation: fadeInUp 0.6s ease forwards;
-        }
+        /* RESTE DU CSS ORIGINAL (PROJETS, LINKS, ETC) */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .project-card { background: rgba(255, 71, 87, 0.05); border: 1px solid rgba(255, 71, 87, 0.2); border-radius: 15px; padding: 2rem; }
+        .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .link-box { background: rgba(26, 26, 26, 0.8); border: 1px solid rgba(255, 71, 87, 0.3); border-radius: 15px; padding: 2rem; text-align: center; }
+        .link-btn { display: inline-block; padding: 8px 20px; background: linear-gradient(135deg, #ff4757, #ffa502); color: white; text-decoration: none; border-radius: 25px; }
+        .stat-item h3 { font-size: 2.5rem; color: #ff4757; }
+        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .skill { background: rgba(0, 210, 211, 0.2); border: 1px solid #00d2d3; color: #00d2d3; padding: 8px 16px; border-radius: 25px; font-weight: 600; display: inline-block; margin: 5px; }
+        .avatar-box { width: 300px; height: 300px; background: #333; border-radius: 20px; overflow: hidden; }
     </style>
 </head>
 <body>
-    <!-- NAVBAR -->
     <nav>
-        <div class="logo">
-            <i class="fas fa-bolt"></i> NINJA GAMING
-        </div>
+        <div class="logo"><i class="fas fa-bolt"></i> NINJA GAMING</div>
         <ul class="nav-links">
             <li><a href="#projects">Projets</a></li>
             <li><a href="#links">Liens</a></li>
@@ -513,357 +94,56 @@
         </ul>
     </nav>
 
-    <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
             <h1>🚀 NINJA GAMING</h1>
-            <p>Développeur passionné • Créateur d'Applications • Innovateur</p>
-            <p style="font-size: 1rem; color: #ff4757; margin-top: 1rem;">Bienvenue sur mon univers</p>
+            <p>Développeur passionné • Créateur d'Applications</p>
             <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">
-                    <i class="fas fa-code"></i> Voir Mes Projets
-                </a>
-                <a href="#links" class="btn btn-secondary">
-                    <i class="fas fa-heart"></i> Me Soutenir
-                </a>
+                <a href="#projects" class="btn btn-primary">Voir Mes Projets</a>
+                <a href="#links" class="btn btn-secondary">Me Soutenir</a>
             </div>
         </div>
     </section>
 
-    <!-- PROJECTS -->
     <section class="projects" id="projects">
         <h2 class="section-title">Mes Projets</h2>
         <div class="projects-grid">
-            <!-- Ninja Fitness -->
-            <div class="project-card fade-in">
-                <div class="project-icon">⚡</div>
-                <h3 class="project-title">Ninja Fitness</h3>
-                <p class="project-desc">Application de suivi d'entraînement complète avec gestion des exercices, séances programmées et planification hebdomadaire.</p>
-                <div class="project-badges">
-                    <span class="badge">React/Capacitor</span>
-                    <span class="badge">Mobile</span>
-                    <span class="badge">Fitness</span>
-                </div>
-                <div style="margin-top: 1.5rem;">
-                    <a href="https://github.com/ninja959999/Ninja-Fitness-APK" class="link-btn">
-                        <i class="fab fa-github"></i> Voir le Code
-                    </a>
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-card fade-in" style="animation-delay: 0.1s;">
-                <div class="project-icon">🎮</div>
-                <h3 class="project-title">Projet en Cours</h3>
-                <p class="project-desc">Nouveaux Projets en développement. Restez connecté pour découvrir mes prochains projets innovants !</p>
-                <div class="project-badges">
-                    <span class="badge">Beta</span>
-                    <span class="badge">Coming Soon</span>
-                </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-card fade-in" style="animation-delay: 0.2s;">
-                <div class="project-icon">✨</div>
-                <h3 class="project-title">Votre Idée ?</h3>
-                <p class="project-desc">Avez-vous une idée de projet ? Contactez-moi pour en discuter et collaborer !</p>
-                <div class="project-badges">
-                    <span class="badge">Open to Ideas</span>
-                </div>
+            <div class="project-card">
+                <h3>Ninja Fitness</h3>
+                <p>Application de suivi d'entraînement.</p>
             </div>
         </div>
     </section>
 
-    <!-- STATS -->
-<section class="stats">
-    <div class="stats-grid">
-        <!-- 1. Compétences d'expert -->
-        <div class="stat-item">
-            <h3>3</h3>
-            <p>Domaines d'Expertise</p>
-            <small style="color: #666;">(Python, Canva, CapCut)</small>
-        </div>
-        <!-- 2. Maintenance & IT -->
-        <div class="stat-item">
-            <h3>4+</h3>
-            <p>Services de Maintenance</p>
-            <small style="color: #666;">(Diagnostic, Hardware, OS, Réseau)</small>
-        </div>
-        <!-- 3. Projets en développement -->
-        <div class="stat-item">
-            <h3>5+</h3>
-            <p>Outils en apprentissage</p>
-            <small style="color: #666;">(Unity, SolidWorks, Blender, etc.)</small>
-        </div>
-        <!-- 4. Statut global -->
-        <div class="stat-item">
-            <h3>🚀</h3>
-            <p>En évolution constante</p>
-            <small style="color: #666;">Apprentissage quotidien</small>
-        </div>
-    </div>
-</section>
-
-   <section class="about" id="about">
-    <div class="about-content">
-        <div class="about-text">
-            <h2>À Propos de Moi</h2>
-            <p>En tant que développeur et passionné de technologie, je suis Plus qu'un simple développeur, je suis un bidouilleur numérique dans l'âme. J'aime autant plonger dans une ligne de code pour optimiser une appli que mettre les mains dans le matériel pour réparer ou optimiser un PC. Mon moteur, c’est la curiosité : j'adore explorer de nouveaux terrains, de la modélisation 3D au développement mobile, pour transformer mes idées en projets concrets. Si c'est technique et que ça permet de créer quelque chose, ça m'intéresse.</p>
-            
-            <h3 style="margin-top: 1.5rem; color: #ffffff;">Développement & Création</h3>
-            <div class="skills">
-                <span class="skill">Python</span>
-                <span class="skill">Unity</span>
-                <span class="skill">Arduino</span>
-                <span class="skill">VS Code</span>
-                <span class="skill">Blender</span>
-                <span class="skill">Photoshop</span>
-                <span class="skill">Canva</span>
-                <span class="skill">CapCut</span>
+    <div class="about-section">
+        <h2>Logiciel & Compétences</h2>
+        <div class="skills-category">
+            <h3><img src="https://img.icons8.com/fluency/48/000000/video-editing.png" alt=""> Montage / Création</h3>
+            <div class="skill-item">
+                <span class="skill-name">CapCut</span>
+                <div class="skill-bar-container"><div class="skill-bar" style="width: 95%;"></div></div>
             </div>
-
-            <h3 style="margin-top: 1.5rem; color: #ffffff;">Maintenance & IT</h3>
-            <div class="skills">
-                <span class="skill">Diagnostic Hardware</span>
-                <span class="skill">Réinstallation OS</span>
-                <span class="skill">Réseau (IPv4/v6)</span>
-                <span class="skill">Data Recovery</span>
-                <span class="skill">Maintenance Préventive</span>
+            <div class="skill-item">
+                <span class="skill-name">Photoshop</span>
+                <div class="skill-bar-container"><div class="skill-bar" style="width: 85%;"></div></div>
             </div>
         </div>
-        <div class="about-image">
-    <div class="avatar-box" style="padding: 0; overflow: hidden;">
-        <img src="icon.jpg" style="width: 100%; height: 100%; object-fit: cover;">
     </div>
-</div>
-    </div>
-       
-</section>
 
-       <!-- ========= NOUVEAU PANNEAU LOGICIEL ========= -->
-<div class="about-section">
-    <h2>Logiciel & Compétences</h2>
-    
-    <div class="skills-category">
-        <h3><img src="https://img.icons8.com/fluency/48/000000/video-editing.png" alt="Icône Montage"> Montage / Création</h3>
+    <div class="about-section languages-section">
+        <h2>Langues</h2>
         <div class="skill-item">
-            <span class="skill-name">CapCut</span>
-            <div class="skill-bar-container"><div class="skill-bar" style="width: 95%;"></div></div>
+            <span class="skill-name">Français (natif)</span>
+            <div class="skill-bar-container"><div class="skill-bar" style="width: 100%;"></div></div>
         </div>
         <div class="skill-item">
-            <span class="skill-name">Photoshop</span>
-            <div class="skill-bar-container"><div class="skill-bar" style="width: 85%;"></div></div>
-        </div>
-        <div class="skill-item">
-            <span class="skill-name">Blender</span>
-            <div class="skill-bar-container"><div class="skill-bar" style="width: 70%;"></div></div>
-        </div>
-        <div class="skill-item">
-            <span class="skill-name">PicsArt</span>
-            <div class="skill-bar-container"><div class="skill-bar" style="width: 80%;"></div></div>
+            <span class="skill-name">Anglais (A2+)</span>
+            <div class="skill-bar-container"><div class="skill-bar" style="width: 65%;"></div></div>
         </div>
     </div>
-    <!-- Vous pouvez ajouter d'autres catégories ici sur le même modèle -->
-</div>
 
-<!-- ========= NOUVEAU PANNEAU LANGUES ========= -->
-<div class="about-section languages-section">
-    <h2>Langues</h2>
-    <div class="skill-item">
-        <span class="skill-name">Français (natif)</span>
-        <div class="skill-bar-container"><div class="skill-bar" style="width: 100%;"></div></div>
-    </div>
-    <div class="skill-item">
-        <span class="skill-name">Anglais (A2+)</span>
-        <div class="skill-bar-container"><div class="skill-bar" style="width: 65%;"></div></div>
-    </div>
-    <div class="skill-item">
-        <span class="skill-name">Espagnol (A2+)</span>
-        <div class="skill-bar-container"><div class="skill-bar" style="width: 60%;"></div></div>
-    </div>
-    <div class="skill-item">
-        <span class="skill-name">Japonais</span>
-        <div class="skill-bar-container"><div class="skill-bar" style="width: 10%;"></div></div>
-    </div>
-</div>
-
-    /* Styles généraux pour les nouvelles sections (reprenant le style existant) */
-.about-section {
-    margin-top: 40px;
-}
-
-.about-section h2 {
-    color: #fff;
-    font-size: 24px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #2ec4b6; /* Couleur de votre portfolio */
-    display: inline-block;
-    padding-bottom: 5px;
-}
-
-/* Styles pour les catégories de compétences */
-.skills-category {
-    margin-bottom: 30px;
-}
-
-.skills-category h3 {
-    color: #a0a0a0; /* Couleur des sous-titres existants */
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.skills-category h3 img {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
-}
-
-/* Styles pour chaque ligne de compétence/langue */
-.skill-item {
-    margin-bottom: 10px;
-}
-
-.skill-name {
-    color: #fff;
-    display: block;
-    margin-bottom: 5px;
-    font-size: 14px;
-}
-
-/* Styles pour la barre de niveau */
-.skill-bar-container {
-    height: 6px;
-    width: 100%;
-    background-color: #333; /* Fond de la barre (gris très foncé) */
-    border-radius: 3px;
-    overflow: hidden;
-}
-
-.skill-bar {
-    height: 100%;
-    background-color: #2ec4b6; /* Couleur de la barre de niveau (votre turquoise) */
-    border-radius: 3px;
-    transition: width 0.6s ease; /* Animation au chargement */
-}
-
-/* Ajustement pour la section Langues (optionnel, pour plus de compacité) */
-.languages-section .skill-name {
-    margin-bottom: 2px;
-}
-.languages-section .skill-item {
-    margin-bottom: 8px;
-}
-
-
-    
-    <!-- LINKS -->
     <section class="links" id="links">
-        <h2 class="section-title">🔗 Me Soutenir & Me Contacter</h2>
-        <div class="links-grid">
-            <!-- Ko-fi -->
-            <div class="link-box">
-                <div class="link-icon">☕</div>
-                <div class="link-title">Ko-fi</div>
-                <div class="link-subtitle">Offre-moi un café</div>
-                <a href="https://ko-fi.com/ninjagaming959" target="_blank" class="link-btn">
-                    <i class="fas fa-heart"></i> Donner
-                </a>
-            </div>
-
-            <!-- Patreon -->
-            <div class="link-box">
-                <div class="link-icon">👑</div>
-                <div class="link-title">Patreon</div>
-                <div class="link-subtitle">Abonnement de soutien</div>
-                <a href="https://www.patreon.com/c/ninja_gaming959?vanity=user" target="_blank" class="link-btn">
-                    <i class="fas fa-crown"></i> Devenir Patron
-                </a>
-            </div>
-
-            <!-- GitHub -->
-            <div class="link-box">
-                <div class="link-icon">💻</div>
-                <div class="link-title">GitHub</div>
-                <div class="link-subtitle">Vois mes codes</div>
-                <a href="https://github.com/ninja959999" target="_blank" class="link-btn">
-                    <i class="fab fa-github"></i> Suivre
-                </a>
-            </div>
-
-            <!-- Email -->
-            <div class="link-box">
-                <div class="link-icon">📧</div>
-                <div class="link-title">Email</div>
-                <div class="link-subtitle">Me contacter</div>
-                <a href="mailto:ninjaproject@outlook.fr" class="link-btn">
-                    <i class="fas fa-envelope"></i> Envoyer
-                </a>
-            </div>
-
-            <!-- Notion -->
-            <div class="link-box">
-                <div class="link-icon">📝</div>
-                <div class="link-title">Notion</div>
-                <div class="link-subtitle">Mon portfolio détaillé</div>
-                <a href="https://app.notion.com/p/Ninja_gaming959-NOTION-393ab4b6fe9480198958ecb446a0de54?source=copy_link" target="_blank" class="link-btn">
-                    <i class="fas fa-book"></i> Visiter
-                </a>
-            </div>
-
-            <!-- Discord (optionnel) -->
-            <div class="link-box">
-                <div class="link-icon">💵</div>
-                <div class="link-title">Paypal</div>
-                <div class="link-subtitle">Fais un don</div>
-                <a href="https://paypal.me/NinjaGaming551" target="_blank" class="link-btn">
-                    <i class="fab fa-paypal"></i> Faire un Don
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="social-links">
-            <a href="https://github.com/ninja959999" target="_blank" title="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://ko-fi.com/ninjagaming959" target="_blank" title="Ko-fi">
-                <i class="fas fa-heart"></i>
-            </a>
-            <a href="mailto:ninjaproject@outlook.fr" title="Email">
-                <i class="fas fa-envelope"></i>
-            </a>
-        </div>
-        <p>&copy; 2026 NINJA GAMING - Tous droits réservés | Made with ⚡</p>
-    </footer>
-
-    <script>
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-
-        // Fade in animation on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.project-card, .link-box').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
+        <h2 class="section-title">🔗 Me Contacter</h2>
+        </section>
 </body>
 </html>
