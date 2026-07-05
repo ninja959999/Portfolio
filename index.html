@@ -424,71 +424,107 @@
         }
 
         /* ================================
-           PANNEAU LOGICIEL / LANGUES (remis dans le head)
+           PANNEAU LOGICIEL / LANGUES (redesign)
            ================================ */
         .about-section {
-            margin-top: 40px;
+            margin-top: 4rem;
         }
 
-        .about-section h2 {
-            color: #fff;
-            font-size: 24px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #2ec4b6;
-            display: inline-block;
-            padding-bottom: 5px;
+        .about-section > h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #ff4757, #00d2d3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .skills-panel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
 
         .skills-category {
-            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 210, 211, 0.2);
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .skills-category:hover {
+            border-color: #00d2d3;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 210, 211, 0.15);
         }
 
         .skills-category h3 {
-            color: #a0a0a0;
-            font-size: 18px;
+            color: #ffffff;
+            font-size: 1.1rem;
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
+            gap: 0.6rem;
+            margin-bottom: 1.3rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .skills-category h3 img {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
+        .skills-category h3 .cat-icon {
+            font-size: 1.3rem;
         }
 
         .skill-item {
-            margin-bottom: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .skill-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-name-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
         }
 
         .skill-name {
-            color: #fff;
-            display: block;
-            margin-bottom: 5px;
-            font-size: 14px;
+            color: #e0e0e0;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .skill-percent {
+            color: #00d2d3;
+            font-size: 0.78rem;
+            font-weight: 600;
         }
 
         .skill-bar-container {
-            height: 6px;
+            height: 8px;
             width: 100%;
-            background-color: #333;
-            border-radius: 3px;
+            background-color: rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
             overflow: hidden;
         }
 
         .skill-bar {
             height: 100%;
-            background-color: #2ec4b6;
-            border-radius: 3px;
-            transition: width 0.6s ease;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #ff4757, #00d2d3);
+            transition: width 1s ease;
+            box-shadow: 0 0 10px rgba(0, 210, 211, 0.5);
         }
 
-        .languages-section .skill-name {
-            margin-bottom: 2px;
+        .languages-section .skill-bar {
+            background: linear-gradient(90deg, #ffa502, #ff4757);
+            box-shadow: 0 0 10px rgba(255, 71, 87, 0.4);
         }
 
-        .languages-section .skill-item {
-            margin-bottom: 8px;
+        .languages-section .skill-percent {
+            color: #ffa502;
         }
 
         /* ================================
@@ -710,45 +746,133 @@
         <div class="about-section">
             <h2>Logiciel & Compétences</h2>
 
-            <div class="skills-category">
-                <h3><img src="https://img.icons8.com/fluency/48/000000/video-editing.png" alt="Icône Montage"> Montage / Création</h3>
-                <div class="skill-item">
-                    <span class="skill-name">CapCut</span>
-                    <div class="skill-bar-container"><div class="skill-bar" style="width: 95%;"></div></div>
+            <div class="skills-panel-grid">
+
+                <div class="skills-category">
+                    <h3><span class="cat-icon">💻</span> Programmation / Dev</h3>
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">C++</span><span class="skill-percent">Avancé</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 85%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">Python</span><span class="skill-percent">Intermédiaire</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 65%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">JavaScript</span><span class="skill-percent">Débutant</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 35%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">SQL / NoSQL</span><span class="skill-percent">Solide</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 60%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">VS Code</span><span class="skill-percent">95%</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 95%;"></div></div>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <span class="skill-name">Photoshop</span>
-                    <div class="skill-bar-container"><div class="skill-bar" style="width: 85%;"></div></div>
+
+                <div class="skills-category">
+                    <h3><span class="cat-icon">⚙️</span> DevOps / Systèmes</h3>
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">Docker</span><span class="skill-percent">70%</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 70%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">CI/CD</span><span class="skill-percent">60%</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 60%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">Linux</span><span class="skill-percent">75%</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 75%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">Réseau (IPv4/v6)</span><span class="skill-percent">70%</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 70%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">Git / GitHub</span><span class="skill-percent">80%</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 80%;"></div></div>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <span class="skill-name">Blender</span>
-                    <div class="skill-bar-container"><div class="skill-bar" style="width: 70%;"></div></div>
+
+                <div class="skills-category">
+                    <h3><span class="cat-icon">🎬</span> Montage / Création</h3>
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">CapCut</span><span class="skill-percent">95%</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 95%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">Photoshop</span><span class="skill-percent">85%</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 85%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">Blender</span><span class="skill-percent">70%</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 70%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">Canva</span><span class="skill-percent">90%</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 90%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">PicsArt</span><span class="skill-percent">80%</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 80%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">OBS Studio</span><span class="skill-percent">75%</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 75%;"></div></div>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <span class="skill-name">PicsArt</span>
-                    <div class="skill-bar-container"><div class="skill-bar" style="width: 80%;"></div></div>
+
+                <div class="skills-category">
+                    <h3><span class="cat-icon">🔧</span> Hardware / IoT / Autres</h3>
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">Arduino / IoT</span><span class="skill-percent">65%</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 65%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">Diagnostic Hardware</span><span class="skill-percent">75%</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 75%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">Réinstallation OS</span><span class="skill-percent">85%</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 85%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">Unity</span><span class="skill-percent">50%</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 50%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">Capacitor (Android)</span><span class="skill-percent">65%</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 65%;"></div></div>
+                    </div>
                 </div>
+
             </div>
         </div>
 
         <!-- ========= PANNEAU LANGUES ========= -->
         <div class="about-section languages-section">
             <h2>Langues</h2>
-            <div class="skill-item">
-                <span class="skill-name">Français (natif)</span>
-                <div class="skill-bar-container"><div class="skill-bar" style="width: 100%;"></div></div>
-            </div>
-            <div class="skill-item">
-                <span class="skill-name">Anglais (A2+)</span>
-                <div class="skill-bar-container"><div class="skill-bar" style="width: 65%;"></div></div>
-            </div>
-            <div class="skill-item">
-                <span class="skill-name">Espagnol (A2+)</span>
-                <div class="skill-bar-container"><div class="skill-bar" style="width: 60%;"></div></div>
-            </div>
-            <div class="skill-item">
-                <span class="skill-name">Japonais</span>
-                <div class="skill-bar-container"><div class="skill-bar" style="width: 10%;"></div></div>
+            <div class="skills-panel-grid">
+                <div class="skills-category">
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">🇫🇷 Français</span><span class="skill-percent">Natif</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 100%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">🇬🇧 Anglais</span><span class="skill-percent">A2+</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 65%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">🇪🇸 Espagnol</span><span class="skill-percent">A2+</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 60%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-row"><span class="skill-name">🇯🇵 Japonais</span><span class="skill-percent">Débutant</span></div>
+                        <div class="skill-bar-container"><div class="skill-bar" style="width: 10%;"></div></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
