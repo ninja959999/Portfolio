@@ -637,6 +637,9 @@
     </div>
 </div>
     </div>
+       
+</section>
+
        <!-- ========= NOUVEAU PANNEAU LOGICIEL ========= -->
 <div class="about-section">
     <h2>Logiciel & Compétences</h2>
@@ -683,8 +686,78 @@
         <div class="skill-bar-container"><div class="skill-bar" style="width: 10%;"></div></div>
     </div>
 </div>
-</section>
 
+    /* Styles généraux pour les nouvelles sections (reprenant le style existant) */
+.about-section {
+    margin-top: 40px;
+}
+
+.about-section h2 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #2ec4b6; /* Couleur de votre portfolio */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Styles pour les catégories de compétences */
+.skills-category {
+    margin-bottom: 30px;
+}
+
+.skills-category h3 {
+    color: #a0a0a0; /* Couleur des sous-titres existants */
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.skills-category h3 img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+/* Styles pour chaque ligne de compétence/langue */
+.skill-item {
+    margin-bottom: 10px;
+}
+
+.skill-name {
+    color: #fff;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/* Styles pour la barre de niveau */
+.skill-bar-container {
+    height: 6px;
+    width: 100%;
+    background-color: #333; /* Fond de la barre (gris très foncé) */
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.skill-bar {
+    height: 100%;
+    background-color: #2ec4b6; /* Couleur de la barre de niveau (votre turquoise) */
+    border-radius: 3px;
+    transition: width 0.6s ease; /* Animation au chargement */
+}
+
+/* Ajustement pour la section Langues (optionnel, pour plus de compacité) */
+.languages-section .skill-name {
+    margin-bottom: 2px;
+}
+.languages-section .skill-item {
+    margin-bottom: 8px;
+}
+
+
+    
     <!-- LINKS -->
     <section class="links" id="links">
         <h2 class="section-title">🔗 Me Soutenir & Me Contacter</h2>
